@@ -1,10 +1,13 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_kmpus2/profilepage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
+  
 }
 
 class _HomePageState extends State<HomePage> {
@@ -13,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: SizedBox(),
         title: const Text('sinau statless widget dan stateful widget'),
         centerTitle: true,
         backgroundColor: Colors.blue,
@@ -146,6 +150,17 @@ class _HomePageState extends State<HomePage> {
                   ));
               },
               child: Text("tampilkan snackbar"),
+            ),
+            SizedBox(height: 10),
+            //pindah profilpage
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Profilepage()),
+                );
+              },
+              child: Text("pindah ke profil page"),
             ),
           ],
         ),
